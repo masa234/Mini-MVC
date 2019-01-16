@@ -41,9 +41,9 @@ abstract class Controller {
             header( "Location: $redirect_url ");
             exit();
         } else if ( $this->session->is_Authenticated ){    
-            $this->redirect( 'event_list' );
+            $this->redirect( 'index' );
         } else {
-            $this->redirect( 'users/new' );
+            $this->redirect( 'sessions/new' );
         }
     }
 

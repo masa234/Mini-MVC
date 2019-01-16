@@ -1,7 +1,7 @@
 <?php 
 
 class Session 
-{
+{   
     // 静的なメンバ変数（後で調べてみる）
     protected static $session_started = false;
 

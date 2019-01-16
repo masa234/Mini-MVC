@@ -3,10 +3,10 @@
 class Application {
     protected $request;
     protected $session;
-    protected $login_method = array( '/login', '/sessions/create' );
+    protected $login_method = array( '/', '/sessions/create' );
     protected $register_method = array( '/users/new', '/users/create' );
     protected $login_param = array( 'controller' => 'SessionController', 'action' => 'new' ); 
-    protected $home_param  = array( 'controller' => 'ProjectController', 'action' => 'project_list' );
+    protected $home_param  = array( 'controller' => 'ItemController', 'action' => 'index' );
 
     public function __construct() 
     {
@@ -55,7 +55,7 @@ class Application {
     }
 
     public function run_Method( $controller_instance, $action ) 
-    {       
+    {   
         if ( ! method_exists( $controller_instance, $action ) ) {
             $this->NotFound404( $action . ' Not Found' );
         } 
