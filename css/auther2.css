@@ -1,0 +1,66 @@
+/* body {
+    background-color: #FFE4B5 !important;
+    font-weight: bold !important;
+    font-family: 'arial black';
+    /* font-family: 'Helvetica Neue','Helvetica','Arial',cursive; */
+    /* font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',cursive; */
+    /* color: black; */
+/* } */
+
+/* .bg-dark {
+    background-color: #66CDAA !important;
+}   */
+
+/* .alert {
+    padding: 30px !important;
+    font-weight: bolder !important;
+    font-size: 25px !important;
+    border-radius: 15px !important;
+} */
+
+.jumbotron {
+    background-color: rgb(red, green, blue) !important;
+    border-radius: 50px;
+    box-shadow: -5px 6px gray inset;
+}
+
+.jumbotron:hover {
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+.username {
+    font-size: 60px;
+}
+
+.event-start-date {
+    font-size: 60px;
+}
+
+.event-tag {
+    background-color: #DDDDDD;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-image, .post-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+.container-fluid {
+    padding-top: 60px !important; 
+}
+
+.nav-link {
+    color: black; 
+}
+
+.active {
+    color: blue !important; 
+}
