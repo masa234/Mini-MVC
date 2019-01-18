@@ -42,8 +42,6 @@ class Request {
         return array( 
             '/'
             => array( 'controller' => 'session', 'action' => 'new' ),
-            '/login'
-            => array( 'controller' => 'session', 'action' => 'new'  ),
             '/sessions/create'
             => array( 'controller' => 'session', 'action' => 'create'  ),
             '/signout'
@@ -53,7 +51,9 @@ class Request {
             '/users/new'
             => array( 'controller' => 'user', 'action' => 'new'  ),
             '/users/create'
-            => array( 'controller' => 'user', 'action' => 'create' )
+            => array( 'controller' => 'user', 'action' => 'create' ),
+            '/items'
+            => array( 'controller' => 'item', 'action' => 'index' )
         );
     }
 

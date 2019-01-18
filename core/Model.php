@@ -23,7 +23,7 @@ abstract class Model {
         $HOST = "localhost";
         $USERNAME = "root";
         $PASSWORD = "";
-        $DBNAME = "zemi3";
+        $DBNAME = "item_app";
         
         $db = new mysqli( $HOST, $USERNAME, $PASSWORD, $DBNAME );
     

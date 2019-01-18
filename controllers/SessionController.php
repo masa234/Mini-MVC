@@ -37,7 +37,7 @@ class SessionController extends Controller {
             $this->session->flash( 'ログインに成功しました' );
             $this->session->add( 'user', $user );
             $this->redirect( 
-                'event_list'
+                'items'
              );
         } else  {    
             $errors[] = 'パスワードが間違っています';

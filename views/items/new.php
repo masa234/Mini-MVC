@@ -1,12 +1,12 @@
 <?php ob_start();
 
-define( "FORMTITLE", "サインイン" ); 
+define( "FORMTITLE", "出品する" ); 
 define( "MESSAGE", "" ); 
-define( "BUTTONTEXT", "サインイン" );
-$post_path =  $this->app_path . '/users/create';
+define( "BUTTONTEXT", "出品" );
+$post_path =  $this->app_path . '/items/create';
 $link_url = $this->app_path . '/';
-define( "OTHERBUTTONTEXT", "ログインはこちら" );
-$user = null;
+define( "OTHERBUTTONTEXT", "出品されているリストはこちら" );
+$item = null;
 
 if ( ! isset( $with_input_errors ) ) {
     $with_input_errors = null;
@@ -14,16 +14,15 @@ if ( ! isset( $with_input_errors ) ) {
 
 ?>
 
-<?php $this->render( "/shared/_user_form",
+<?php $this->render( "/shared/_item_form",
     array(  
-        'user'      => $user,
         'post_path' => $post_path,
         'with_input_errors' => $with_input_errors,
         'link_url'  => $link_url,
+        'item'      => $item,
         'register_form' => true
     ) ); ?>
 
 <?php $yield = ob_get_clean() ?>
 <?php $this->render( 'template',
   array( 'yield' => $yield ) ) ?>
-

@@ -179,6 +179,10 @@ class Validate {
                 )) {
                     throw new Exception( 'ファイルの形式エラーです' );
                 }
+                
+                if ( ! file_exists( 'images' ) ) {
+                    mkdir( 'images' );
+                }
                     
                 $dir = 'images';
                 $filename = date( 'YmdHis' ) . rand( 10, 150000 ) . '.' . $extension;

@@ -4,7 +4,6 @@ class ItemController extends Controller
 {
     public function index() 
     {      
-            $_SESSION = array();
         return $this->render(
             'items/new'    
         );
@@ -12,8 +11,10 @@ class ItemController extends Controller
 
     // 出品 
     public function new() 
-    {   
-
+    {       
+        return $this->render(
+            'items/new'
+        );
     }
 
     public function show() 

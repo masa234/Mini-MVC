@@ -7,7 +7,7 @@
 			  <div class="row">
 				  <div class="col-md-6">
 					  <div class="well">
-						  <form id="loginForm" method="POST" action = "<?= $this->h( $post_path ) ?>" novalidate>
+						  <form id="loginForm" method="POST" action = "<?= $this->h( $post_path ) ?>" enctype="multipart/form-data" novalidate>
               <?php $this->render( '/shared/_flash' ) ?>
                 <div class="text-center mb-4">
                   <h1 class="h3 mb-3 font-weight-normal"><?=$this->h( FORMTITLE ); ?></h1>
@@ -26,7 +26,7 @@
 							  </div>
 
                 <?php if ( $register_form ): ?>
-                  <label for="inputEmail" class="sr-only">Eメール</label>
+                  <label for="inputEmail">Eメール</label>
                   <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Emailで入力してください"
                   value="<?=$this->h( $this->get_Value( 'email', $user ) ) ?>"required>
                 <?php endif; ?>
@@ -36,6 +36,10 @@
                   <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Passwordを5~15文字以内で入力してください"
                   value="<?=$this->h( $this->get_Value( 'password', $user ) ) ?>"  required>
 							  </div>
+
+                <?php if ( $register_form ): ?>
+                  <input type="file" name="user_img">
+                <?php endif; ?>
 
                 <button class="btn btn-lg btn-success btn-block" type="submit" name= "action" ><?=$this->h( BUTTONTEXT ); ?></button>
 						  </form>
