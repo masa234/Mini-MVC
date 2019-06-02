@@ -1,49 +1,45 @@
 <?php
 
-class User extends Model {
+class Item extends Model {
     // @return array ( array( カラム名 => array( POSTされた値=>チェック項目 ) )の形式の連想配列を返却します)
     public function get_Rules()
     {
         return 
         array(
-            array( 'user_name'
+            array( 'name'
             =>
                 array( 
-                    'title'    => 'ユーザ名',
+                    'title'    => '商品名',
                     'required' => '',
-                    'uniq'     => array( 'users' => 'user_name' ),
-                    'max'      => 20 
+                    'max'      => 50 
                 ) ),
-            array( 'email'
+            array( 'price'
             =>
                 array( 
-                    'title' => 'Email',
+                    'title' => '値段',
                     'required' => 'の形式として正しい値を入力してください(255文字以内)',
-                    'max' => 255 
+                    'type' => 'numeric',
+                    'min' => 0 
                 ) ),
-            array( 'password'
+            array( 'tags'
             =>
                 array( 
-                    'title' => 'パスワード',
-                    'required' => '',
-                    'regix' => array( '/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{5,15}+\z/i' 
-                                => '半角英数字をそれぞれ1文字以上含む5～15文字以内の文字列'
-                                )
+                    'title' => 'タグ',
+                    'max'      => 30
                 ) ),
+            array( 'detail'
+            =>
+                array( 
+                    'title' => '説明文',
+                    'required' => '',
+                ) ),  
             array( 'img'
             =>
                 array( 
-                    'title' => 'ユーザ画像',
+                    'title' => '商品画像',
                     'required' => '',
                     'type'     => 'file(require)',
-                ) ),
-            array( 'agreement'
-            =>
-                array( 
-                    'title' => '利用規約',
-                    'required' => 'に同意してください',
-                    // 'in'       => array( 0, 1 )
-                ) ),       
+                ) ),     
         );
     }
     

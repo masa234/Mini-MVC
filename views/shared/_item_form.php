@@ -40,7 +40,7 @@
 
 				<div class="form-group">
                     <label for="inputDetail">商品の説明</label>
-                    <input type="text" id="item_detail" class="form-control" name="item_tag" placeholder="商品の説明文を入力してください。" 
+                    <input type="text" id="item_detail" class="form-control" name="item_detail" placeholder="商品の説明文を入力してください。" 
                     value="<?=$this->h( $this->get_Value( 'item_detail', $item ) ) ?>"required autofocus>
                 </div>
 

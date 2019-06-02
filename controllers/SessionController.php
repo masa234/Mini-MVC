@@ -21,7 +21,7 @@ class SessionController extends Controller {
                 'user_name' => $this->request->get_Post( 'user_name' ),
                 'password'  => $this->request->get_Post( 'password' ),
             );
-        
+            
         $model = new User;
         $user = $model->find_by( 'user_name', $inputs['user_name'] );
 
@@ -37,7 +37,7 @@ class SessionController extends Controller {
             $this->session->flash( 'ログインに成功しました' );
             $this->session->add( 'user', $user );
             $this->redirect( 
-                'items'
+                '/'
              );
         } else  {    
             $errors[] = 'パスワードが間違っています';

@@ -26,6 +26,11 @@ class UserController extends Controller {
          );
     }
 
+    public function show() 
+    {
+        
+    }
+
     public function create()    
     {       
         if ( ! $this->request->is_Post() ) {
@@ -39,9 +44,9 @@ class UserController extends Controller {
                 'password'  => $this->request->get_Post( 'password' ),
                 'img'       => "user_img"
                 ); 
- 
+                
         $this->Render_if_ValidFail( $inputs, 'users/new' );
-            
+
         $result = $this->model->create( 
             array( 
                 'user_name' => $inputs['user_name'],
@@ -51,11 +56,18 @@ class UserController extends Controller {
             ) );
 
         if ( $result ) {
-            $this->session->flash( 'ユーザを作成しました' );
-            $this->redirect( '/' );
+            $this->session->flash( 'ログインしました' );
+            $this->session->flash( 'ログインに成功しました' );
+            $this->session->add( 'user', $user );
+            $this->redirect( 
+                '/'
+             );
+            
+            return $this->redirect( '' );
         } else {
             $this->session->flash( 'ユーザの作成に失敗しました', 'danger' );
-            $this->render(
+
+            return $this->render(
                 'users/new'
             );
         }

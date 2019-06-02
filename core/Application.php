@@ -3,10 +3,10 @@
 class Application {
     protected $request;
     protected $session;
-    protected $login_method = array( '/', '/sessions/create' );
+    protected $login_method = array( '/login' ,'/sessions/create' );
     protected $register_method = array( '/users/new', '/users/create' );
     protected $login_param = array( 'controller' => 'SessionController', 'action' => 'new' ); 
-    protected $home_param  = array( 'controller' => 'ItemController', 'action' => 'index' );
+    protected $home_param  = array( 'controller' => 'HomeController', 'action' => 'index' );
 
     public function __construct() 
     {

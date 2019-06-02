@@ -64,3 +64,56 @@
 .active {
     color: blue !important; 
 }
+
+.user-image{
+    /* border-radius: 50%; */
+    width: 100px;
+    height: 100px;
+}
+
+.jumbotron--extend {
+    padding: 20px;
+    border-radius: 0px;
+}
+
+
+.blue-line {
+    background: linear-gradient(transparent 50%, #a8eaff 50%);
+}
+
+.navbar-expand-lg {
+    padding: 15px!important;
+}   
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+.container-fluid {
+    position: absolute!important;
+    top: 30px;
+}
+
+span.required {
+    font-size: 20px;
+    color: red;
+}
+
+.btn-signin {
+    margin-top: 20px;
+    border-radius: 0px;
+    padding: 10px;
+    /* border-radius: 5px;  */
+}
+
+.btn-signin:hover{
+    background-color: #fff;
+    border-color: #59b1eb;
+    color: #59b1eb;
+}
+
+.alert {
+    padding: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
