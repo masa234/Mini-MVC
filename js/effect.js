@@ -23,7 +23,7 @@ function countLength( value, max_length, feed_back_field ) {
 }
 
 function check_email_format( value, max_length, feed_back_field ) {     
-    if ( $(value).val().match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)  ) {
+    if ( is_email( $(value).val() ) ) {
         $( value ).removeClass("is-invalid");
         $( value ).addClass("is-valid");
         $( feed_back_field ).css('color', '#18BC9C');
@@ -34,4 +34,8 @@ function check_email_format( value, max_length, feed_back_field ) {
         $( feed_back_field ).css('color', '#E74C3C');
         $( feed_back_field ).text( 'メールアドレスの形式で指定してください' );
     }
+}
+
+function is_email( value ) {
+    return value.match( (/.+@.+\..+/) );
 }

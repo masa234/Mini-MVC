@@ -41,7 +41,7 @@ class Request {
     {
         return array( 
             '/'
-            => array( 'controller' => 'home', 'action' => 'index' ),
+            => array( 'controller' => 'Report', 'action' => 'index' ),
             '/login'
             => array( 'controller' => 'session', 'action' => 'new' ),
             '/sessions/create'
