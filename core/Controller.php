@@ -23,7 +23,12 @@ abstract class Controller {
     public function redirect( $path )
     {
         $app_url = $this->request->get_AppPath();
-        $redirect_url = $app_url . '/' . $path;
+        
+        if ( $path != '/' ) {
+            $redirect_url = $app_url . '/' . $path;
+        } else {
+            $redirect_url = $app_url . $path;
+        }
         
         header( "Location: $redirect_url ");
         exit();
@@ -41,9 +46,9 @@ abstract class Controller {
             header( "Location: $redirect_url ");
             exit();
         } else if ( $this->session->is_Authenticated ){    
-            $this->redirect( 'event_list' );
+            $this->redirect( 'index' );
         } else {
-            $this->redirect( 'users/new' );
+            $this->redirect( 'sessions/new' );
         }
     }
 
@@ -62,7 +67,7 @@ abstract class Controller {
     {    
         $validate = new Validate;
         $with_input_errors = $validate->get_Validresult( $inputs, $this->model->get_Rules() );
-        
+
         if ( count( $with_input_errors ) > 0 ) {
             $datas += array( 'with_input_errors' => $with_input_errors );
             $this->render( 

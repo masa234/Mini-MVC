@@ -2,4 +2,7 @@
 
 require 'navbar.php';
 
-echo $yield;
+?>
+<?php require 'sidebar.php';
+echo $yield; ?>
+</main>

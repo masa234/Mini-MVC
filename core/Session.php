@@ -1,7 +1,7 @@
 <?php 
 
 class Session 
-{
+{   
     // 静的なメンバ変数（後で調べてみる）
     protected static $session_started = false;
 
@@ -36,7 +36,8 @@ class Session
 
     public function is_Authenticated()
     {   
-        $current_user =  $this->current_user();
+        $current_user = $this->current_user();
+
         return isset( $current_user );    
     }
 
@@ -66,7 +67,7 @@ class Session
     }
 
     public function current_user() 
-    {
+    {   
         return $this->get( 'user' );
     }
 

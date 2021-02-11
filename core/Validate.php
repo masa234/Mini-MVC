@@ -47,6 +47,7 @@ class Validate {
                                     }
                                     if ( $value == 'numeric' 
                                         && ! is_numeric( $input_value ) ) {
+                                            var_dump( $input_value );exit();
                                         $errors[] =  $title . 'は' . '数値型でなくてはいけません';
                                         break;
                                     }
@@ -178,6 +179,10 @@ class Validate {
                      )
                 )) {
                     throw new Exception( 'ファイルの形式エラーです' );
+                }
+                
+                if ( ! file_exists( 'images' ) ) {
+                    mkdir( 'images' );
                 }
                     
                 $dir = 'images';

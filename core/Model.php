@@ -23,7 +23,7 @@ abstract class Model {
         $HOST = "localhost";
         $USERNAME = "root";
         $PASSWORD = "";
-        $DBNAME = "zemi3";
+        $DBNAME = "item_app";
         
         $db = new mysqli( $HOST, $USERNAME, $PASSWORD, $DBNAME );
     
@@ -64,13 +64,13 @@ abstract class Model {
     public function fetchAll( $query ) {
         $result = $this->execute( $query );
 
-            $response = array();
+        $response = array();
 
-            while ( $row = $result->fetch_assoc() ) {
-                $response[] = $row;
-            }
+        while ( $row = $result->fetch_assoc() ) {
+            $response[] = $row;
+        }
 
-            return $response;
+        return $response;
         
     }
 
@@ -119,7 +119,7 @@ abstract class Model {
         $culumns .= "`created_at`";
         $values .= "'$current_time'";
         $query = 'INSERT INTO ' . $table . '(' . $culumns . ') VALUES (' . $values . ')';
-
+        
         return $this->execute( $query );
     }
 

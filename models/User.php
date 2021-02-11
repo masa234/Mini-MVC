@@ -30,6 +30,13 @@ class User extends Model {
                                 => '半角英数字をそれぞれ1文字以上含む5～15文字以内の文字列'
                                 )
                 ) ),
+            array( 'img'
+            =>
+                array( 
+                    'title' => 'ユーザ画像',
+                    'required' => '',
+                    'type'     => 'file(require)',
+                ) ),
             array( 'agreement'
             =>
                 array( 
